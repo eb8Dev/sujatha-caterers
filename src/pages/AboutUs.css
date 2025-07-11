@@ -1,0 +1,130 @@
+/* About Page Layout */
+.about-content {
+  padding: 40px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 40px;
+}
+
+.about-container-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  justify-content: center;
+}
+
+/* Logo on left */
+.about-logo img {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Center the image within the container */
+.about-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Text on right */
+.about-text {
+  flex: 1;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.about-text h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.about-text p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Badges/Tags */
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.about-badges span {
+  background-color: #d2393c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Closing Line */
+.about-closing {
+  font-style: italic;
+  color: #444;
+  margin-top: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-logo img {
+    width: 80vw;
+    /* Responsive logo size */
+    max-width: 320px;
+  }
+
+  .about-container-left,
+  .about-logo {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+    padding: 0 10px;
+    align-items: center;
+    text-align: justify;
+  }
+
+  .about-text h1 {
+    text-align: center;
+  }
+
+  .about-badges {
+    justify-content: center;
+  }
+
+  .about-badges span {
+    text-align: center;
+  }
+}

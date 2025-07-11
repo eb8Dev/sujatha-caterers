@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Sujatha Caterers Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a modern React-based web application for Sujatha Caterers, designed to showcase catering services, menu offerings, and business information. The app provides an interactive and visually appealing experience for users to explore the menu, learn about services, and contact the business.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Application Features
 
-### `npm start`
+- **Landing Page:** Introduction to Sujatha Caterers, with branding and a call-to-action to explore the menu.
+- **Menu Page:** Interactive menu browser with package and meal type selectors. Menu items include images and package availability.
+- **Services Page:** Overview of catering and meal box services, with descriptive sections and visuals.
+- **About Us:** Story, values, and highlights of Sujatha Caterers, including badges for unique selling points.
+- **Contact Us:** Business contact details, social media links, and embedded Google Maps location.
+- **Responsive Design:** All pages are styled for both desktop and mobile devices.
+- **Component-Based Architecture:** Reusable React components for menu display, selectors, and navigation.
+- **Data-Driven:** Menu and testimonials are managed via structured JavaScript data files.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React** (with React Router for navigation)
+- **CSS Modules** for component-level styling
+- **React Icons** for visual icons
+- **Image Assets** for menu items and branding
 
-### `npm test`
+## Notes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- All menu images and data are managed in the `src/assets/` and `src/data/` directories.
+- The application is ready for deployment as a static site or on any platform supporting React apps.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

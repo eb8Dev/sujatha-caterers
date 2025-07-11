@@ -1,0 +1,251 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 5px;
+  /* enough space so content won't go under sticky navbar */
+  background-image: url('../assets/logos/doodle.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Overlay with 10% opacity */
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+/* Make sure content is above the overlay */
+.home>* {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Container for the centered home content */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  /* full viewport height minus navbar height */
+  padding: 0 20px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Sticky navbar styles */
+.header-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid #eee;
+  background-color: transparent !important;
+  z-index: 10;
+  /* above everything */
+}
+
+/* Container for the centered home content */
+.home-title {
+  font-size: 40px;
+  margin: 0 0 20px;
+  font-family: 'Belleza', sans-serif;
+}
+
+.home-tagline {
+  font-size: 18px;
+  margin: 0 0 20px;
+  font-family: 'Belleza', sans-serif;
+  font-weight: 400;
+}
+
+.home-description {
+  font-size: 22px;
+  max-width: 800px;
+  margin: 0 0 40px;
+  font-family: 'Belleza', sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.cta-button {
+  padding: 15px 40px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Belleza', sans-serif;
+  border: none;
+  border-radius: 5px;
+  background-color: #e63946;
+  color: white;
+  transition: background-color 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.cta-button:hover {
+  background-color: #a62832;
+}
+
+.nav-links button:focus,
+.cta-button:focus {
+  outline: 2px dashed red;
+  outline-offset: 2px;
+}
+
+.header-logo {
+  width: 40px;
+  height: 48px;
+  padding-left: 30px;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 40px;
+  align-items: center;
+  margin-right: 30px;
+  font-size: 16px;
+  margin-top: 16px;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-links button:hover {
+  color: red;
+}
+
+.nav-links button.active {
+  text-decoration: underline;
+  color: red;
+}
+
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  margin: 20px 30px 0 auto;
+  z-index: 20;
+}
+
+.hamburger div {
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Hamburger animation (X shape) */
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+.visit-counter {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mobile nav links visibility */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    gap: 20px;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
+
+  }
+
+  .nav-links.show {
+    /* display: flex; */
+    padding: 20px 0;
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+
+  .nav-links button {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+}
