@@ -56,21 +56,21 @@ const ContactUs = () => {
                 <div className="contact-box">
                     <FaPhoneAlt className="contact-icon" />
                     <h3>Phone</h3>
-                    <p><a href="tel:+919999999999">+91 99999 99999</a></p>
+                    <p><a href="tel:+919703505356">+91 97035 05356</a></p>
                     <p>Available 24/7</p>
                 </div>
 
                 <div className="contact-box">
                     <FaWhatsapp className="contact-icon" />
                     <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">Chat Now</a></p>
+                    <p><a href="https://wa.me/919703505356" target="_blank" rel="noopener noreferrer">Chat Now</a></p>
                     <p>Instant Support</p>
                 </div>
 
                 <div className="contact-box">
                     <FaEnvelope className="contact-icon" />
                     <h3>Email</h3>
-                    <p><a href="mailto:contact@sujathacaterers.com">contact@sujathacaterers.com</a></p>
+                    <p><a href="mailto:sujathameals@gmail.com">sujathameals@gmail.com</a></p>
                     <p>Replies within 12 hours</p>
                 </div>
 
@@ -85,23 +85,25 @@ const ContactUs = () => {
                 <div className="contact-box">
                     <FaMapMarkerAlt className="contact-icon" />
                     <h3>Address</h3>
-                    <p>Brodipet, Guntur</p>
+                    <p>Opposite to Meenakshi Palms, Tarakarama Nagar,Srinivasa Nagar Colony, Guntur-522006</p>
+                    
                     <p>Open in Maps Below</p>
                 </div>
 
                 <div className="contact-box social">
                     <h3>Follow Us</h3>
                     <div className="social-icons">
-                        <a href="https://facebook.com/sujathacaterers" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+                        <a href="https://www.facebook.com/share/1BCf3bKKyk/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
                         <a href="https://instagram.com/sujathacaterers" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                         <a href="https://twitter.com/sujathacaterers" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
                     </div>
                 </div>
             </section>
 
+
             <section className="map-section">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1504.9426618398013!2d80.43374424917873!3d16.307308162705976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a750076016751%3A0x67e7ea578cedc17b!2sSri%20Vasudha%20Tech!5e1!3m2!1sen!2sin!4v1752240130337!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.878551065998!2d80.40892567409921!3d16.329148632429334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a358b71d28fdfc7%3A0x7699357a26dcc9e1!2sSujatha%20Meals%20Contractors!5e0!3m2!1sen!2sin!4v1752248567560!5m2!1sen!2sin"
                     width="50%"
                     height="450"
                     style={{ border: 0 }}

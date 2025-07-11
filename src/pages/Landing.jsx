@@ -74,7 +74,7 @@ const Home = () => {
         {visitCount !== null ? (
           <p>This page has been visited <strong>{visitCount}</strong> times</p>
         ) : (
-          <p>Loading visit count...</p>
+          <p>Long visit count...</p>
         )}
       </footer>
     </div>
