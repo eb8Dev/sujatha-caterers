@@ -69,6 +69,14 @@ body {
   /* above everything */
 }
 
+.welcome-message {
+  color: #222;
+  font-size: 22px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
 /* Container for the centered home content */
 .home-title {
   font-size: 40px;
@@ -209,6 +217,52 @@ body {
   font-size: 0.9rem;
   color: #666;
 }
+
+.cookie-box {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  margin: auto;
+  background-color: #fffbe6;
+  border: 1px solid #e6c200;
+  padding: 15px 20px;
+  border-radius: 10px;
+  z-index: 999;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.cookie-box p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #222;
+}
+
+.cookie-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cookie-actions button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.cookie-actions button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cookie-actions button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
 
 /* Mobile nav links visibility */
 @media (max-width: 768px) {

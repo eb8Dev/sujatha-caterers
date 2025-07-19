@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/logos/logo-nobg.png';
 import './Header.css';
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+  // Check localStorage for user info on mount or route change
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
     }
+  }, [location.pathname]);
+
+  const isActive = (path) => location.pathname === path;
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'services', 'about', 'contact'];
-      let current = '';
-
-      sections.forEach((id) => {
-        const section = document.getElementById(id);
-        if (section && window.scrollY >= section.offsetTop - 100) {
-          current = id;
-        }
-      });
-
-      setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+    navigate('/');
+    window.location.reload();
+  };
 
   return (
     <nav className="header-nav">
@@ -37,34 +37,32 @@ const Header = () => {
         src={logo}
         alt="Logo"
         className="header-logo"
-        onClick={() => scrollToSection('home')}
+        onClick={() => handleNavigate('/')}
         style={{ cursor: 'pointer' }}
       />
-      <div className="nav-links">
-        <button
-          onClick={() => scrollToSection('home')}
-          className={activeSection === 'home' ? 'active' : ''}
-        >
-          Home
-        </button>
-        <button
-          onClick={() => scrollToSection('services')}
-          className={activeSection === 'services' ? 'active' : ''}
-        >
-          Services
-        </button>
-        <button
-          onClick={() => scrollToSection('about')}
-          className={activeSection === 'about' ? 'active' : ''}
-        >
-          About Us
-        </button>
-        <button
-          onClick={() => scrollToSection('contact')}
-          className={activeSection === 'contact' ? 'active' : ''}
-        >
-          Contact Us
-        </button>
+      <div
+        className={`hamburger ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div className={`nav-links ${menuOpen ? 'show' : ''}`}>
+        <button className={isActive('/') ? 'active' : ''} onClick={() => handleNavigate('/')}>Home</button>
+        <button className={isActive('/services') ? 'active' : ''} onClick={() => handleNavigate('/services')}>Services</button>
+        <button className={isActive('/about') ? 'active' : ''} onClick={() => handleNavigate('/about')}>About Us</button>
+        <button className={isActive('/contact') ? 'active' : ''} onClick={() => handleNavigate('/contact')}>Contact Us</button>
+
+        {user ? (
+          <>
+            <button className={isActive('/profile') ? 'active' : ''} onClick={() => handleNavigate('/profile')}>Profile</button>
+            <button onClick={handleLogout}>Logout</button>
+          </>
+        ) : (
+          <button className={isActive('/login') ? 'active' : ''} onClick={() => handleNavigate('/login')}>Login</button>
+        )}
       </div>
     </nav>
   );

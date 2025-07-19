@@ -1,51 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import './Services.css';
-import logo from '../assets/logos/logo-nobg.png';
 import mealboximg from '../assets/logos/mealbox.png';
 import cateringImg from '../assets/logos/catering.png';
+import Header from '../components/Header';
 
 const Services = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const isActive = (path) => location.pathname === path;
-
-  const handleNavigate = (path) => {
-    navigate(path);
-    setMenuOpen(false); // close menu on navigation
-  };
+  
 
   return (
     <div className="home">
-      <nav className="header-nav">
-        <img
-          src={logo}
-          alt="Logo"
-          className="header-logo"
-          onClick={() => handleNavigate('/')}
-          style={{ cursor: 'pointer' }}
-        />
-        <div
-          className={`hamburger ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-
-        <div className={`nav-links ${menuOpen ? 'show' : ''}`}>
-
-          <button onClick={() => handleNavigate('/')}>Home</button>
-          <button className={isActive('/services') ? 'active' : ""} onClick={() => handleNavigate('/services')}>Services</button>
-          <button onClick={() => handleNavigate('/about')}>About Us</button>
-          <button onClick={() => handleNavigate('/contact')}>Contact Us</button>
-        </div>
-      </nav>
-
+      <Header />
       <section className="service-content">
         <h1 className='service-title'>Our Services</h1>
         {/* at the top center of the page below the nav */}

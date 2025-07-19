@@ -1,49 +1,13 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import Header from '../components/Header';
 import './ContactUs.css';
-import logo from '../assets/logos/logo-nobg.png';
 import { FaPhoneAlt, FaWhatsapp, FaFacebook, FaInstagram, FaTwitter, FaEnvelope, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactUs = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const [menuOpen, setMenuOpen] = useState(false);
 
-    const isActive = (path) => location.pathname === path;
-
-    const handleNavigate = (path) => {
-        navigate(path);
-        setMenuOpen(false);
-    };
 
     return (
         <div className="home">
-            <nav className="header-nav">
-                <img
-                    src={logo}
-                    alt="Logo"
-                    className="header-logo"
-                    onClick={() => handleNavigate('/')}
-                    style={{ cursor: 'pointer' }}
-                />
-
-                <div
-                    className={`hamburger ${menuOpen ? 'open' : ''}`}
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-
-                <div className={`nav-links ${menuOpen ? 'show' : ''}`}>
-                    <button onClick={() => handleNavigate('/')}>Home</button>
-                    <button className={isActive('/services') ? 'active' : ''} onClick={() => handleNavigate('/services')}>Services</button>
-                    <button className={isActive('/about') ? 'active' : ''} onClick={() => handleNavigate('/about')}>About Us</button>
-                    <button className={isActive('/contact') ? 'active' : ''} onClick={() => handleNavigate('/contact')}>Contact Us</button>
-                </div>
-            </nav>
-
+            <Header />
             <section className="contact-hero">
                 <h1>We’d Love to Hear From You!</h1>
                 <p>
@@ -86,7 +50,7 @@ const ContactUs = () => {
                     <FaMapMarkerAlt className="contact-icon" />
                     <h3>Address</h3>
                     <p>Opposite to Meenakshi Palms, Tarakarama Nagar,Srinivasa Nagar Colony, Guntur-522006</p>
-                    
+
                     <p>Open in Maps Below</p>
                 </div>
 
@@ -104,7 +68,7 @@ const ContactUs = () => {
             <section className="map-section">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.878551065998!2d80.40892567409921!3d16.329148632429334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a358b71d28fdfc7%3A0x7699357a26dcc9e1!2sSujatha%20Meals%20Contractors!5e0!3m2!1sen!2sin!4v1752248567560!5m2!1sen!2sin"
-                    width="50%"
+                    width="80%"
                     height="450"
                     style={{ border: 0 }}
                     allowFullScreen=""

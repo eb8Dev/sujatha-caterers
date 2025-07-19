@@ -90,7 +90,7 @@ import taatiMunjalaCurry from '../assets/itemImages/taati-munjala-curry.png';
 import chamaDumpalaPulusu from '../assets/itemImages/chama-dumpala-pulusu.png';
 import gonguraPhoolMakani from '../assets/itemImages/gongura-phool-makani.jpg';
 import gravyCurry from '../assets/itemImages/gravy-curry.png';
-import vankayaBajji from '../assets/itemImages/vankaya-bajji.png';
+// import vankayaBajji from '../assets/itemImages/vankaya-bajji.png';
 import mangoIceCream from '../assets/itemImages/mango.png';
 import tootyFruity from '../assets/itemImages/tooty-fruity.png';
 import butterscotch from '../assets/itemImages/butterscotch.jpeg';
